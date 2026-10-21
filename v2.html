@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>BUU奶龙艺术学院 // 连续四幕艺术展</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -628,30 +628,97 @@
         @media (max-width: 960px) {
             .stage-artwork-holder {
                 left: 50%;
-                top: 32%;
-                width: min(340px, 80vw);
+                top: 33%;
+                width: min(320px, 82vw);
             }
             .scene-text-overlay {
-                padding: 70px 24px 30px 24px;
+                padding: 68px 18px max(20px, env(safe-area-inset-bottom, 20px)) 18px;
                 justify-content: flex-end;
+                gap: 10px;
             }
+            #h5TextMilestone0,
+            #h5TextMilestone1 {
+                justify-content: space-between !important;
+                padding-top: 68px !important;
+                padding-bottom: max(20px, env(safe-area-inset-bottom, 20px)) !important;
+            }
+            /* 移动端标题卡片：毛玻璃粗野主义展签卡，绝不隐藏！ */
             .text-header-block {
-                display: none;
+                display: block !important;
+                max-width: min(440px, 92vw);
+                background: rgba(255, 255, 255, 0.88);
+                backdrop-filter: saturate(180%) blur(20px);
+                -webkit-backdrop-filter: saturate(180%) blur(20px);
+                border: 1.5px solid var(--elem-black);
+                box-shadow: 4px 4px 0 var(--elem-black);
+                padding: 12px 16px;
+                border-radius: 2px;
+                pointer-events: auto;
             }
-            .apple-nav { padding: 0 20px; }
+            .scene-tag {
+                font-size: clamp(0.64rem, 2.7vw, 0.72rem);
+                letter-spacing: 0.14em;
+                margin-bottom: 6px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .scene-headline {
+                font-size: clamp(1.35rem, 5.4vw, 1.95rem);
+                line-height: 1.05;
+                letter-spacing: -0.02em;
+                max-width: 100%;
+            }
+            .scene-headline .headline-zh {
+                font-size: clamp(1.35rem, 5.4vw, 1.95rem);
+                line-height: 1.08;
+            }
+            .scene-headline .headline-en {
+                font-size: clamp(0.72rem, 3.0vw, 0.98rem);
+                line-height: 1.15;
+                margin-top: 4px;
+            }
+            .scatter-headline {
+                font-size: clamp(1.22rem, 5.0vw, 1.80rem);
+                line-height: 1.12;
+                max-width: 100%;
+            }
+            .scatter-headline .scatter-char {
+                font-size: clamp(1.22rem, 5.0vw, 1.80rem);
+            }
+            .text-footer-block {
+                gap: 10px;
+            }
+            .live-progress-badge {
+                padding: 7px 13px;
+                font-size: 0.78rem;
+                border-width: 1.5px;
+            }
+            .apple-nav {
+                padding: 0 16px;
+                height: calc(52px + env(safe-area-inset-top, 0px));
+                padding-top: env(safe-area-inset-top, 0px);
+            }
             .nav-brand {
                 gap: 8px;
-                font-size: 0.76rem;
+                font-size: 0.78rem;
+                font-weight: 800;
                 letter-spacing: 0.02em;
             }
             .nav-disclaimer-text {
                 display: none;
             }
             .nav-buu-link {
-                padding: 7px 12px;
+                padding: 6px 12px;
+                font-size: 0.76rem;
             }
-            .nav-buu-link span:first-child { display: none; }
-            .nav-buu-link span:last-child { font-size: 0.95rem; }
+            .nav-buu-link span:first-child {
+                display: inline-block;
+                font-size: 0.74rem;
+            }
+            .nav-buu-link span:last-child {
+                font-size: 0.88rem;
+            }
             .swiss-grid {
                 top: 72px;
                 right: 20px;
@@ -675,9 +742,9 @@
                 opacity: 0.058;
             }
             .watermark-single-hero {
-                font-size: clamp(1.8rem, 8vw, 3.2rem);
-                bottom: 20px;
-                left: 20px;
+                font-size: clamp(1.6rem, 6.8vw, 2.6rem);
+                bottom: max(16px, env(safe-area-inset-bottom, 16px));
+                left: 16px;
             }
             .viewport-frame { inset: 72px 20px 20px 20px; }
             .spatial-cross.cross-a,
@@ -995,21 +1062,21 @@
         @media (max-width: 960px) {
             .ambient-glow-field {
                 left: 50%;
-                top: 36%;
+                top: 33%;
                 width: 110vw;
                 height: 75vh;
             }
             .stage-artwork-mount {
-                left: 50%;
-                top: 36%;
-                padding: 16px 16px 20px 16px;
+                left: 50% !important;
+                top: 33% !important;
+                padding: 12px 12px 16px 12px !important;
             }
             .mount-artwork-1 {
-                width: min(340px, 86vw);
+                width: min(300px, 80vw, calc((100vh - 320px) / 1.33)) !important;
             }
             .mount-artwork-2 {
-                width: min(280px, 76vw, calc((100vh - 180px) / 1.88));
-                padding: 16px 16px 14px 16px;
+                width: min(220px, 60vw, calc((100vh - 340px) / 1.88)) !important;
+                padding: 12px 12px 12px 12px !important;
             }
             
             .fullscreen-caption-badge {
@@ -1017,7 +1084,7 @@
             }
             #h3TextMilestone0 .text-header-block,
             #h3TextMilestone1 .text-header-block {
-                padding: 16px 20px;
+                padding: 12px 16px;
             }
         }
 
@@ -1413,14 +1480,17 @@
     }
     .video-kinetic-index {
         left: -0.06em;
-        bottom: 13vh;
-        font-size: 43vw;
+        bottom: 12vh;
+        font-size: 38vw;
         line-height: 0.78;
+        opacity: 0.04;
     }
     .video-frameless-monolith {
-        left: 50%;
-        top: 48%;
-        height: clamp(380px, 58vh, 520px);
+        left: 50% !important;
+        top: 38% !important;
+        height: clamp(230px, 34vh, 310px) !important;
+        width: auto !important;
+        aspect-ratio: 1440 / 2860 !important;
     }
     .video-minimal-timeline {
         opacity: 0.75;
@@ -1428,22 +1498,31 @@
     .scene-bottom-left-group {
         width: 100%;
         align-items: center;
-        gap: 10px;
+        gap: 8px;
     }
     .qr-mosaic-card {
-        width: min(220px, 75vw);
-        padding: 12px;
+        width: min(200px, 68vw);
+        padding: 10px 12px;
         align-self: center;
+        box-shadow: 4px 4px 0 var(--elem-black);
+    }
+    .qr-card-tag {
+        font-size: 0.60rem;
+        letter-spacing: 0.12em;
+    }
+    .qr-card-sub {
+        font-size: 0.68rem;
     }
     .qr-canvas-link {
-        width: 130px;
-        height: 130px;
+        width: 116px;
+        height: 116px;
+        margin-top: 3px;
     }
     #h4TextMilestone0 .text-header-block,
-            #h4TextMilestone1 .text-header-block,
-            #h5TextMilestone0 .text-header-block,
-            #h5TextMilestone1 .text-header-block {
-        padding: 16px 20px;
+    #h4TextMilestone1 .text-header-block,
+    #h5TextMilestone0 .text-header-block,
+    #h5TextMilestone1 .text-header-block {
+        padding: 12px 16px;
     }
 }
 </style>
@@ -2488,20 +2567,71 @@
                     }
                 }, { passive: false });
 
-                // 触控支持
+                // 触控支持 (带物理惯性动量模拟)
                 let touchStartY = 0;
+                let lastTouchY = 0;
+                let lastTouchTime = 0;
+                let touchVelocity = 0;
+                let momentumAnimId = null;
+
+                const cancelMomentum = () => {
+                    if (momentumAnimId) {
+                        cancelAnimationFrame(momentumAnimId);
+                        momentumAnimId = null;
+                    }
+                };
+
                 window.addEventListener('touchstart', (e) => {
+                    if (!e.touches.length) return;
+                    cancelMomentum();
                     touchStartY = e.touches[0].clientY;
+                    lastTouchY = touchStartY;
+                    lastTouchTime = performance.now();
+                    touchVelocity = 0;
                 }, { passive: true });
 
                 window.addEventListener('touchmove', (e) => {
-                    e.preventDefault();
+                    if (!e.touches.length) return;
                     const currentY = e.touches[0].clientY;
-                    const deltaY = touchStartY - currentY;
-                    touchStartY = currentY;
-                    const touchSensitivity = 0.0035;
+                    const now = performance.now();
+                    const dt = Math.max(1, now - lastTouchTime);
+                    const deltaY = lastTouchY - currentY;
+                    
+                    touchVelocity = deltaY / dt;
+                    lastTouchY = currentY;
+                    lastTouchTime = now;
+
+                    const touchSensitivity = 0.0032;
                     this.targetProgress = Math.max(0, Math.min(this.maxProgress, this.targetProgress + deltaY * touchSensitivity));
+
+                    // 第五幕触控微搓碟交互 (Scroll-to-Scrub)
+                    if (this.currentProgress >= 4.45 && (this.p5Video || this.p4Video) && (this.p4Video && this.p4Video.duration)) {
+                        this.handleWheelScrub(deltaY);
+                    }
+                    e.preventDefault();
                 }, { passive: false });
+
+                window.addEventListener('touchend', () => {
+                    const now = performance.now();
+                    if (now - lastTouchTime < 120 && Math.abs(touchVelocity) > 0.08) {
+                        let momentumVelocity = touchVelocity * 10.0;
+                        const decay = 0.93;
+                        const stepMomentum = () => {
+                            if (Math.abs(momentumVelocity) < 0.001) {
+                                momentumAnimId = null;
+                                return;
+                            }
+                            const delta = momentumVelocity * 0.0032;
+                            this.targetProgress = Math.max(0, Math.min(this.maxProgress, this.targetProgress + delta));
+                            if (this.currentProgress >= 4.45 && (this.p5Video || this.p4Video) && (this.p4Video && this.p4Video.duration)) {
+                                this.handleWheelScrub(momentumVelocity);
+                            }
+                            momentumVelocity *= decay;
+                            momentumAnimId = requestAnimationFrame(stepMomentum);
+                        };
+                        momentumAnimId = requestAnimationFrame(stepMomentum);
+                    }
+                }, { passive: true });
 
                 // 键盘快捷平滑导航
                 window.addEventListener('keydown', (e) => {
@@ -2530,6 +2660,16 @@
                     this.targetMouseX = (e.clientX / window.innerWidth) * 2 - 1;
                     this.targetMouseY = (e.clientY / window.innerHeight) * 2 - 1;
                 });
+
+                // 移动端陀螺仪 2.5D 空间体感倾斜 (Mobile Gyroscope 2.5D Parallax)
+                window.addEventListener('deviceorientation', (e) => {
+                    if (e.gamma !== null && e.beta !== null) {
+                        const gx = Math.max(-1, Math.min(1, e.gamma / 28));
+                        const gy = Math.max(-1, Math.min(1, (e.beta - 45) / 28));
+                        this.targetMouseX = gx;
+                        this.targetMouseY = gy;
+                    }
+                }, { passive: true });
 
                 window.addEventListener('mouseleave', () => {
                     this.targetMouseX = 0;
