@@ -1138,9 +1138,56 @@
             .mount-artwork-1 {
                 width: min(320px, 82vw, calc((100dvh - 240px) / 1.38)) !important;
             }
+            /* 移动端专享：第二幕（粗野主义）画作全屏无框铺满，彻底去除相框 */
             .mount-artwork-2 {
-                width: min(290px, 78vw, calc((100dvh - 240px) / 1.88)) !important;
-                padding: 10px 10px 12px 10px !important;
+                position: fixed !important;
+                left: 50% !important;
+                top: 50% !important;
+                width: 100vw !important;
+                height: 100vh !important;
+                height: 100dvh !important;
+                max-height: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                background: transparent !important;
+                border: none !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+                overflow: hidden !important;
+                z-index: 125 !important;
+            }
+            .mount-artwork-2 .mount-bracket,
+            .mount-artwork-2 .plinth-caption {
+                display: none !important;
+            }
+            .mount-artwork-2 .inner-canvas-2 {
+                width: 100% !important;
+                height: 100% !important;
+                aspect-ratio: unset !important;
+                background: transparent !important;
+                overflow: hidden !important;
+            }
+            .mount-artwork-2 .spatial-layer-container {
+                width: 100% !important;
+                height: 100% !important;
+            }
+            .mount-artwork-2 .depth-layer {
+                inset: 0 !important;
+                width: 100% !important;
+                height: 100% !important;
+            }
+            .mount-artwork-2 .depth-layer img {
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                object-position: center center !important;
+                display: block !important;
+            }
+            .mount-artwork-2 .spatial-depth-svg {
+                width: 100% !important;
+                height: 100% !important;
             }
             
             .fullscreen-caption-badge {
