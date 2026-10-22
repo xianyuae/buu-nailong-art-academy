@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>BUU奶龙艺术学院 // 连续四幕艺术展</title>
+    <title>北京奶龙联合大学</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -68,10 +68,24 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             border-bottom: 2px solid var(--elem-black);
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 桌面端不显示下挂横条 */
+        .nav-disclaimer-banner {
+            display: none;
+        }
+
+        .nav-content-bar {
+            width: 100%;
+            height: 56px;
             padding: 0 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-sizing: border-box;
         }
 
         .nav-brand {
@@ -83,6 +97,12 @@
             font-weight: 700;
             color: var(--text-black);
             letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+
+        .nav-brand .brand-slash {
+            color: var(--text-yellow);
+            margin: 0 1px;
         }
 
         .brand-badge {
@@ -316,6 +336,7 @@
         .scatter-line {
             display: block;
             white-space: nowrap;
+            margin-bottom: 8px;
         }
 
         .scatter-headline .scatter-char {
@@ -732,9 +753,17 @@
                 white-space: nowrap !important;
             }
 
+            #textMilestone0 .scatter-line,
+            .scatter-line {
+                display: block !important;
+                white-space: nowrap !important;
+                margin-bottom: 8px !important;
+                line-height: 1.18 !important;
+            }
+
             .scatter-headline {
                 font-size: clamp(1.15rem, 4.8vw, 1.70rem) !important;
-                line-height: 1.12 !important;
+                line-height: 1.18 !important;
                 max-width: 100% !important;
             }
             .scatter-headline .scatter-char {
@@ -759,15 +788,38 @@
             }
 
             .apple-nav {
+                padding: 0 !important;
+                height: auto !important;
+                padding-top: env(safe-area-inset-top, 0px) !important;
+            }
+            /* 仅在移动端于导航栏下方显示横条，背景与导航栏一致 */
+            .nav-disclaimer-banner {
+                display: flex !important;
+                width: 100%;
+                height: 20px;
+                background: transparent;
+                border-top: 1px solid rgba(0, 0, 0, 0.06);
+                align-items: center;
+                justify-content: center;
+                font-family: var(--font-mono);
+                font-size: 0.64rem;
+                font-weight: 600;
+                color: rgba(0, 0, 0, 0.55);
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+                user-select: text;
+            }
+            .nav-content-bar {
+                height: 48px;
                 padding: 0 16px;
-                height: calc(52px + env(safe-area-inset-top, 0px));
-                padding-top: env(safe-area-inset-top, 0px);
             }
             .nav-brand {
-                gap: 8px;
-                font-size: 0.78rem;
+                gap: 6px;
+                font-size: clamp(0.70rem, 3.0vw, 0.78rem);
                 font-weight: 800;
                 letter-spacing: 0.02em;
+                white-space: nowrap;
+                flex-shrink: 0;
             }
             .nav-disclaimer-text {
                 display: none;
@@ -1644,16 +1696,21 @@
 
     <!-- 顶部固定无缝导航栏 -->
     <header class="apple-nav">
-        <div class="nav-brand">
-            <span class="brand-badge"></span>
-            <span>BUU奶龙艺术学院</span>
+        <div class="nav-content-bar">
+            <div class="nav-brand">
+                <span class="brand-badge"></span>
+                <span>北京联合大学<span class="brand-slash">/</span>奶龙艺术学院</span>
+            </div>
+            <div class="nav-right-group">
+                <span class="nav-disclaimer-text">非官方网站 仅供娱乐 · 与北京联合大学无任何关联</span>
+                <a href="https://www.buu.edu.cn" target="_blank" rel="noopener" class="nav-buu-link" aria-label="跳转到北京联合大学官网">
+                    <span>跳转到北京联合大学官网</span>
+                    <span>↗</span>
+                </a>
+            </div>
         </div>
-        <div class="nav-right-group">
-            <span class="nav-disclaimer-text">此页面仅供娱乐 不代表北京联合大学官方 本网站与北京联合大学无任何关联</span>
-            <a href="https://www.buu.edu.cn" target="_blank" rel="noopener" class="nav-buu-link" aria-label="跳转到北京联合大学官网">
-                <span>跳转到北京联合大学官网</span>
-                <span>↗</span>
-            </a>
+        <div class="nav-disclaimer-banner">
+            <span>非官方网站 仅供娱乐</span>
         </div>
     </header>
 
@@ -2255,10 +2312,10 @@
                 <div class="scene-tag">BUU奶龙艺术学院 // 01 · 构成主义</div>
                 <h1 class="scene-headline scatter-headline" id="p1ScatterTitle" aria-label="北京联合大学 / 奶龙艺术学院">
                     <span class="scatter-line headline-zh">
-                        <span class="scatter-char" data-idx="0" style="transform: translate3d(0, -8px, 0);">北</span><span class="scatter-char" data-idx="1" style="transform: translate3d(0, 7px, 0);">京</span><span class="scatter-char" data-idx="2" style="transform: translate3d(0, -7px, 0);">联</span><span class="scatter-char" data-idx="3" style="transform: translate3d(0, 8px, 0);">合</span><span class="scatter-char" data-idx="4" style="transform: translate3d(0, -6px, 0);">大</span><span class="scatter-char" data-idx="5" style="transform: translate3d(0, 7px, 0);">学</span>
+                        <span class="scatter-char" data-idx="0" style="transform: translate3d(0, -4.0px, 0);">北</span><span class="scatter-char" data-idx="1" style="transform: translate3d(0, 3.5px, 0);">京</span><span class="scatter-char" data-idx="2" style="transform: translate3d(0, -3.5px, 0);">联</span><span class="scatter-char" data-idx="3" style="transform: translate3d(0, 4.0px, 0);">合</span><span class="scatter-char" data-idx="4" style="transform: translate3d(0, -3.0px, 0);">大</span><span class="scatter-char" data-idx="5" style="transform: translate3d(0, 3.5px, 0);">学</span>
                     </span>
                     <span class="scatter-line headline-zh">
-                        <span class="scatter-char slash-accent" data-idx="6" style="transform: translate3d(0, -7px, 0);">/</span><span class="scatter-char" data-idx="7" style="transform: translate3d(0, 8px, 0);">奶</span><span class="scatter-char" data-idx="8" style="transform: translate3d(0, -8px, 0);">龙</span><span class="scatter-char" data-idx="9" style="transform: translate3d(0, 7px, 0);">艺</span><span class="scatter-char" data-idx="10" style="transform: translate3d(0, -7px, 0);">术</span><span class="scatter-char" data-idx="11" style="transform: translate3d(0, 8px, 0);">学</span><span class="scatter-char" data-idx="12" style="transform: translate3d(0, -6px, 0);">院</span>
+                        <span class="scatter-char slash-accent" data-idx="6" style="transform: translate3d(0, -3.0px, 0);">/</span><span class="scatter-char" data-idx="7" style="transform: translate3d(0, 3.5px, 0);">奶</span><span class="scatter-char" data-idx="8" style="transform: translate3d(0, -4.0px, 0);">龙</span><span class="scatter-char" data-idx="9" style="transform: translate3d(0, 3.5px, 0);">艺</span><span class="scatter-char" data-idx="10" style="transform: translate3d(0, -3.5px, 0);">术</span><span class="scatter-char" data-idx="11" style="transform: translate3d(0, 4.0px, 0);">学</span><span class="scatter-char" data-idx="12" style="transform: translate3d(0, -3.0px, 0);">院</span>
                     </span>
                     <span class="headline-en"><span>/</span>CONSTRUCTIVISM</span>
                 </h1>
@@ -2516,23 +2573,23 @@
              [2.00, 2.45]: 破框全景进场过渡 (背景色由冷雾灰滑入深邃天青石色 #3B4F4D)
              [2.45, 3.00]: 作品三《浮云原野》全景全屏铺满视窗，奶龙轻盈浮空漫游 (按钮：回溯 ↺)
            ============================================================ */
-        // 作品一构成主义标题字符上下轻微错位初始参数矩阵 (仅 Y 轴上下错位)
+        // 作品一构成主义标题字符上下错位初始参数矩阵 (仅 Y 轴错位)
         const P1_TITLE_CHAR_CONFIGS = [
             // 北 京 联 合 大 学
-            { dy: -8 },
-            { dy: 7 },
-            { dy: -7 },
-            { dy: 8 },
-            { dy: -6 },
-            { dy: 7 },
+            { dy: -4.0 },
+            { dy: 3.5 },
+            { dy: -3.5 },
+            { dy: 4.0 },
+            { dy: -3.0 },
+            { dy: 3.5 },
             // / 奶 龙 艺 术 学 院
-            { dy: -7 },
-            { dy: 8 },
-            { dy: -8 },
-            { dy: 7 },
-            { dy: -7 },
-            { dy: 8 },
-            { dy: -6 }
+            { dy: -3.0 },
+            { dy: 3.5 },
+            { dy: -4.0 },
+            { dy: 3.5 },
+            { dy: -3.5 },
+            { dy: 4.0 },
+            { dy: -3.0 }
         ];
 
         class UnifiedExhibitionEngine {
