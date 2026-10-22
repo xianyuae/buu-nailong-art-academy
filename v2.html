@@ -650,8 +650,7 @@
                 padding-bottom: max(20px, env(safe-area-inset-bottom, 20px)) !important;
             }
             .scene5-top-badge {
-                display: flex !important;
-                margin-top: 8px !important;
+                display: none !important;
             }
             #h5TextMilestone0 .scene-bottom-left-group .text-footer-block {
                 display: none !important;
@@ -742,40 +741,21 @@
                 font-size: clamp(1.15rem, 4.8vw, 1.70rem) !important;
             }
 
-            /* 进度角标：严格跟随标题卡片下方对齐 */
+            /* 移动设备显示下：彻底去掉百分比进度显示 */
             #textMilestone0 .text-footer-block,
             #h2TextMilestone0 .text-footer-block,
             #h3TextMilestone0 .text-footer-block,
             #h4TextMilestone0 .text-footer-block,
             #h5TextMilestone0 .text-footer-block,
-            .text-footer-block {
-                display: flex !important;
-                align-items: center !important;
-                gap: 8px !important;
-                margin-top: 2px !important;
-                pointer-events: auto !important;
-            }
-
+            .text-footer-block,
             #textMilestone0 .live-progress-badge,
             #h2TextMilestone0 .live-progress-badge,
             #h3TextMilestone0 .live-progress-badge,
             #h4TextMilestone0 .live-progress-badge,
             #h5TextMilestone0 .live-progress-badge,
-            .live-progress-badge {
-                display: inline-flex !important;
-                align-items: center !important;
-                gap: 6px !important;
-                padding: 6px 12px !important;
-                font-size: 0.76rem !important;
-                font-family: var(--font-mono) !important;
-                font-weight: 700 !important;
-                color: var(--text-black) !important;
-                background: rgba(255, 255, 255, 0.90) !important;
-                backdrop-filter: blur(12px) !important;
-                -webkit-backdrop-filter: blur(12px) !important;
-                border: 1.5px solid var(--elem-black) !important;
-                box-shadow: 2px 2px 0 var(--elem-black) !important;
-                border-radius: 2px !important;
+            .live-progress-badge,
+            .scene5-top-badge {
+                display: none !important;
             }
 
             .apple-nav {
@@ -1571,8 +1551,10 @@
     }
     .video-frameless-monolith {
         left: 50% !important;
-        top: 40% !important;
-        height: clamp(260px, 40vh, 360px) !important;
+        top: 50% !important;
+        height: 90vh !important;
+        height: 90dvh !important;
+        max-height: 92dvh !important;
         width: auto !important;
         aspect-ratio: 1440 / 2860 !important;
     }
@@ -1581,13 +1563,13 @@
     }
     .scene-bottom-left-group {
         width: 100%;
-        align-items: center;
+        align-items: flex-start !important;
         gap: 8px;
     }
     .qr-mosaic-card {
         width: min(200px, 68vw);
         padding: 10px 12px;
-        align-self: center;
+        align-self: flex-start !important;
         box-shadow: 4px 4px 0 var(--elem-black);
     }
     .qr-card-tag {
